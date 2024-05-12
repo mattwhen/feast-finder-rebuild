@@ -1,0 +1,26 @@
+nav {
+    height: 50px;
+    box-shadow: 0 0 5px 0;
+}
+
+span {
+    position: absolute;
+    right: 80px;
+}
+
+.search-container {
+    position: relative;
+}
+
+input {
+    background-color: whitesmoke;
+    border-radius: 3px;
+    border: solid 2px whitesmoke;
+}
+
+.container {
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
