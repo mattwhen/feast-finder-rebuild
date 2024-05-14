@@ -2,26 +2,22 @@ import { useState, useContext } from 'react';
 import styles from './RandomRecipe.module.css';
 import { RecipeData } from './Context';
 import Card from '../../../../components/Card/Card';
+import Pagination from '../../../pagination/components/Pagination';
 
 export default function RandomRecipe() {
 	const { getRandomRecipes, randomRecipe } = useContext(RecipeData);
-	const [startingIndex, setStartingIndex] = useState(0);
-	const [endingIndex, setEndingIndex] = useState(10);
+	const [isLoading, setIsLoading] = useState(false);
+	const [currentPage, setCurrentPage] = useState(1);
+	const cardsPerPage = 9; 
 
-	function handleRendering() {
-		console.log(randomRecipe.length, endingIndex);
-		if (endingIndex >= randomRecipe.length) {
-			return null;
-		} else {
-			setEndingIndex(endingIndex + 10);
-		}
-	}
 	return (
 		<div className={styles.randomrecipe}>
-			<h2>Not sure what recipe to make?</h2>
 			<button onClick={getRandomRecipes}>Generate Random Recipe</button>
-			<div className={styles.container}>
-				{randomRecipe?.slice(startingIndex, endingIndex).map((item) => {
+			{/* TODO: create Pagination button here. */}
+			<Pagination cards={cardsPerPage} cardsPerPage={cardsPerPage} currentPage={currentPage} setCurrentPage={setCurrentPage} />
+			<div className={styles.grid}>
+				{/* Render Card component data here */}
+				{randomRecipe?.slice(currentPage * cardsPerPage - cardsPerPage, currentPage * cardsPerPage).map((item) => {
 					return (
 						<>
 							<Card recipe={item}></Card>
@@ -29,18 +25,6 @@ export default function RandomRecipe() {
 					);
 				})}
 			</div>
-			{randomRecipe ? (
-				<button
-					onClick={handleRendering}
-					className={
-						endingIndex >= randomRecipe.length
-							? `${styles.test}`
-							: `${styles.test2}`
-					}
-				>
-					Load more...
-				</button>
-			) : null}
 		</div>
 	);
 }

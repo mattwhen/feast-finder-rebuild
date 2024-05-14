@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './Card.module.css';
 
 export default function Card({ recipe }) {
-	const { title, image, cheap, vegan, healthScore } = recipe;
+	const { title, image, summary, vegan, healthScore } = recipe;
 	return (
 		<div className={styles.card}>
 			{title}

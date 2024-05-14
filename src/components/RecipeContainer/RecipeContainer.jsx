@@ -4,11 +4,10 @@ import styles from './RecipeContainer.module.css';
 import Card from '../Card/Card';
 
 export default function RecipeContainer() {
-  const randomRecipe = useContext(RandomRecipe);
-
-  return (
-    <div className={styles.container}>
-     <RandomRecipe />
-    </div>
-  );
+	return (
+		<div className={styles.container}>
+			<h2>Not sure what recipe to make?</h2>
+			<RandomRecipe />
+		</div>
+	);
 }

@@ -6,6 +6,7 @@ import { fetchRandomRecipes } from './features/getRandomRecipe';
 import { RecipeData } from './features/getRandomRecipe/components/RandomRecipe/Context';
 
 function App() {
+	// When the API is called, we should expect an Array of Objects. 
 	const [randomRecipe, setRandomRecipe] = useState(null);
 
 	const getRandomRecipes = async () => {
