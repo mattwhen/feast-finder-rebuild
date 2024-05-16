@@ -1,7 +1,5 @@
-import React, { useContext } from 'react';
-import RandomRecipe from '../../features/getRandomRecipe/components/RandomRecipe/RandomRecipe';
+import RandomRecipe from '../../features/getRandomRecipe/components/Recipe/Recipe';
 import styles from './RecipeContainer.module.css';
-import Card from '../Card/Card';
 
 export default function RecipeContainer() {
 	return (

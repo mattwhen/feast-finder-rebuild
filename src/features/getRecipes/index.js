@@ -1,4 +1,5 @@
 // Barrel file
-import Food from '../getRandomRecipe/components/RandomRecipe/RandomRecipe';
+import randomRecipe from '../getRandomRecipe/components/Recipe/Recipe';
+import { recipeSearch } from './api/recipeSearch';
 
-export { Food };
+export { randomRecipe, recipeSearch };
